@@ -1,0 +1,26 @@
+PARA COPIAR O ARQUIVO DA PASTA ONDE VOCE ABRE O POWERSHELL
+scp clinica_criacao.sql rodrigofernandes@192.168.56.101:~/
+
+ACESSAR O SERVER DO LINUX PELO POWERSHELL
+ssh rodrigofernandes@192.168.56.101
+
+DENTRO DO SERVER DO LINUX
+Injetar BD no mysql dentro do servidor:
+mysql < clinica_criacao.sql
+mysql -u root -p < clinica_criacao.sql
+
+ACESSAR O MYSQL DENTRO DO SERVER LINUX
+mysql -u root -p
+sudo mysql
+
+CRIAR UTILIZADORES DENTRO DO MYSQL
+CREATER USER 'rodrigo_fernandes'@'%' IDENTIFIED BY '123';
+CREATE USER 'rodrigo_fernandes'@'localhost' IDENTIFIED BY '123';
+
+CONCEDER TODOS PRIVILÉGIOS AOS UTILZADORES
+GRANT ALL PRIVILEGES ON clinica_V1_1.* TO 'rodrigo_fernandes'@'%';
+GRANT ALL PRIVILEGES ON clinica_V1_1.* TO 'rodrigo_fernandes'@'localhost';
+
+PARA VER OS PRIVILÉGIOS CONCEDIDOS
+SHOW GRANTS FOR 'rodrigo_fernandes'@'%';
+SHOW GRANTS FOR 'rodrigo_fernandes'@'localhost';
